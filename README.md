@@ -15,3 +15,4 @@ mudanças, decisões, caracteristicas, descrição etc.
 
 
 --- NÃO ESQUECA DE CONFIGUAR SEU NOME E EMAIL. ---
+--- ANTES DE TUDO ACEITAR O CONVITE PARA SER UM COLABORADOR ---
