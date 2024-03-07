@@ -5,3 +5,16 @@ Projeto de P.I do primeiro semestre da faculdade SPTECH-SCHOOL
 
 Qualquer coisas que vocês julgarem como importante sobre o projeto, podem adicionar aqui. Seja sobre marcos,
 mudanças, decisões, caracteristicas, descrição etc.
+
+---- TUTORIAL PARA CONFIGURAR O REPOSITORIO NA MAQUINA DE VOCÊS ----
+
+1. BAIXAR O CONTEUDO DO REPOSITORIO ('CLICAR EM CODE, BAIXAR ARQUIVOS')
+2. EXTRAIR OS ARQUIVOS DA PASTA
+3. ABIR O GIT BASH(CLICAR COM O BOTÃO DIREITO DENTRO DA BASTA E CLICAR EM GIT BASH HERE)
+4. COPIAR O LINK DO REPOSITORIO
+5. NO GIT BASH ESCREVER git glone E CLONAR O LINK DO REPOSITORIO
+6. DAR ENTER
+7. ACESSAR O REPOSITORIO (ls, cd VITTEC)
+
+
+--- NÃO ESQUECA DE CONFIGUAR SEU NOME E EMAIL. ---
