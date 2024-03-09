@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="calcStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Calculadora financeira</title>
+    <h1 class="header">Veja o quanto podemos te ajudar!</h1>
+
+</head>
+
+<style>
+
+.header
+{
+
+    background-color: darkolivegreen;
+    color: black;
+    font-family: monospace; 
+    font-size: 50px;
+
+}
+
+body
+{
+
+    background-color: darkolivegreen;
+
+}
+
+div
+{
+
+    background-color: #E0CF94;
+    color: purple;
+    font-family: monospace;
+    font-size: 30px;
+
+}
+
+input
+{
+
+    width: 400px;
+    height: 50px;
+    font-size: 40px;
+
+}
+
+button
+{
+
+    width: 20%;
+    height: 100px;
+    color: purple;
+    font-size: 40px;
+    background-color: gray;
+    border-style: groove;
+
+}
+
+b
+{
+
+    color: black;
+
+}
+
+</style>
+
+<body class="body">
+
+    <div class="div_inputs">
+
+        Ainda está em dúvida se o nosso projeto pode ou não te ajudar? Que tal alguns números?
+        <br>
+        Utilizando nossa calculadora financeira, você pode descobrir se o nosso projeto será útil! (use apenas números).
+        <br>
+        <br>
+        Por quantos reais você vende uma tonelada, em média?:
+        <br>
+        <input id="input_tonelada_valor">
+        <br>
+        <br>
+        Insira também, quantas toneladas você colheu, em sua última safra:
+        <br>
+        <input id="input_tonelada_colheita">
+        <br>
+        <br>
+        Agora, insira a porcentagem da perda causada por doenças fúngicas:
+        <br>
+        <input id="input_porcentagem_fungo">
+        <br>
+        <br>
+        Por fim, insira quantos hectares de parreiras você tem:
+        <br>
+        <input  id="input_hectares">
+        <br>
+        <br>
+        <button onclick="calculoFinanceiro()">Fazer o cálculo</button>
+
+    </div>
+
+    <div id="div_mostrar_calculo"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calculoFinanceiro()
+    {
+
+        var toneladaValor = Number(input_tonelada_valor.value)
+        var toneladaColheita = Number(input_tonelada_colheita.value)
+        var fungoPorcentagem = Number(input_porcentagem_fungo.value)
+        var hectares = Number(input_hectares.value)
+
+        var valorColhido = toneladaValor * toneladaColheita
+        var toneladaMaximo = hectares * 60
+        var valorMaximo = toneladaValor * toneladaMaximo
+        var toneladaPerda = toneladaMaximo - toneladaColheita
+        var valorPerda = valorMaximo - valorColhido
+        var fungoPerda = toneladaMaximo - (toneladaMaximo * (fungoPorcentagem / 100) )
+        var valorPerdaFungo = fungoPerda * toneladaValor
+
+        
+        div_mostrar_calculo.innerHTML = 
+        `Você sabia que, em média, um hectare pode produzir até <b>60 toneladas</b> de uva?
+        <br>
+        Visto como você tem <b>${hectares}</b> hectares, o máximo de toneladas que podem ser colhidas é <b>${toneladaMaximo}</b>.
+        <br>
+        Infelizmente, você colheu apenas <b>${toneladaColheita}</b> toneladas, uma diferença de <b>${toneladaPerda}</b>.
+        <br>
+        Convertendo isso usando o preço que você nos informou, há uma perda de <b>R$${valorPerda}</b>!
+        <br>
+        Além disso, é possível perceber que, de suas perdas, <b>${fungoPorcentagem}%</b> ocorreram por causa de doenças fúngicas!
+        <br>
+        Graças aos fungos, você pode estar perdendo até <b>${fungoPerda}</b> toneladas, ou <b>R$${valorPerdaFungo}</b>!!
+        <br>
+        Algumas doenças fúngicas podem diminuir em até <b>50%</b> a sua safra, mas com o controle adequado da temperatura e úmidade de suas parreiras, todo esse prejuízo pode ser evitado!
+        <p>Ficou interessado? Insira seu email aqui para que possamos entrar em contato e negociar uma possível parceria! Muito obrigado pela atenção.</p>
+        <input id="input_email">`
+
+    }
+
+</script>
