@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="calcStyle.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Calculadora financeira</title>
-    <h1 class="header">Veja o quanto podemos te ajudar!</h1>
-
+    
 </head>
 
 <style>
@@ -15,36 +13,40 @@
 .header
 {
 
-    background-color: darkolivegreen;
-    color: black;
+    background-color: #56070C;
+    color: #F2DCB3;
     font-family: monospace; 
     font-size: 50px;
+    display: flex;
+    justify-content: center;
 
 }
 
 body
 {
 
-    background-color: darkolivegreen;
+    background-color: #56070C;
+    margin: 0;
+    padding: 0;
 
 }
 
 div
 {
-
-    background-color: #E0CF94;
-    color: purple;
+    background-color: #F2DCB3; 
+    color: #56070C;
     font-family: monospace;
     font-size: 30px;
+    margin: 50px;
 
 }
 
 input
 {
 
-    width: 400px;
-    height: 50px;
-    font-size: 40px;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
 
 }
 
@@ -53,9 +55,9 @@ button
 
     width: 20%;
     height: 100px;
-    color: purple;
+    color: #56070C;
     font-size: 40px;
-    background-color: gray;
+    background-color: #dbc961;
     border-style: groove;
 
 }
@@ -70,40 +72,47 @@ b
 </style>
 
 <body class="body">
+    
+    <h1 class="header">Veja o quanto podemos te ajudar!</h1>
+
 
     <div class="div_inputs">
-
-        Ainda está em dúvida se o nosso projeto pode ou não te ajudar? Que tal alguns números?
-        <br>
-        Utilizando nossa calculadora financeira, você pode descobrir se o nosso projeto será útil! (use apenas números).
-        <br>
-        <br>
-        Por quantos reais você vende uma tonelada, em média?:
-        <br>
-        <input id="input_tonelada_valor">
-        <br>
-        <br>
-        Insira também, quantas toneladas você colheu, em sua última safra:
-        <br>
-        <input id="input_tonelada_colheita">
-        <br>
-        <br>
-        Agora, insira a porcentagem da perda causada por doenças fúngicas:
-        <br>
-        <input id="input_porcentagem_fungo">
-        <br>
-        <br>
-        Por fim, insira quantos hectares de parreiras você tem:
-        <br>
-        <input  id="input_hectares">
-        <br>
-        <br>
-        <button onclick="calculoFinanceiro()">Fazer o cálculo</button>
+        <div>
+            Ainda está em dúvida se o nosso projeto pode ou não te ajudar? Que tal alguns números?
+            <br>
+            Utilizando nossa calculadora financeira, você pode descobrir se o nosso projeto será útil! (use apenas números).
+            <br>
+            <br>
+            Por quantos reais você vende uma tonelada, em média?:
+            <br>
+            <input id="input_tonelada_valor">
+            <br>
+            <br>
+            Insira também, quantas toneladas você colheu, em sua última safra:
+            <br>
+            <input id="input_tonelada_colheita">
+            <br>
+            <br>
+            Agora, insira a porcentagem da perda causada por doenças fúngicas:
+            <br>
+            <input id="input_porcentagem_fungo">
+            <br>
+            <br>
+            Por fim, insira quantos hectares de parreiras você tem:
+            <br>
+            <input  id="input_hectares">
+            <br>
+            <br>
+            <button onclick="calculoFinanceiro()">Fazer o cálculo</button>
+        
+        </div>
 
     </div>
 
-    <div id="div_mostrar_calculo"></div>
-    
+    <div>
+        <div id="div_mostrar_calculo"></div>
+    </div>
+
 </body>
 </html>
 
@@ -118,10 +127,13 @@ b
         var hectares = Number(input_hectares.value)
 
         var valorColhido = toneladaValor * toneladaColheita
+        
         var toneladaMaximo = hectares * 60
         var valorMaximo = toneladaValor * toneladaMaximo
+
         var toneladaPerda = toneladaMaximo - toneladaColheita
         var valorPerda = valorMaximo - valorColhido
+
         var fungoPerda = toneladaMaximo - (toneladaMaximo * (fungoPorcentagem / 100) )
         var valorPerdaFungo = fungoPerda * toneladaValor
 
@@ -144,5 +156,6 @@ b
         <input id="input_email">`
 
     }
-
+// VINHO : #56070C
+// CREME : #F2DCB3 
 </script>
