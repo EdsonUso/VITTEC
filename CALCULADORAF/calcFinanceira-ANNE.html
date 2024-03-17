@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylepi.css">
+</head>
+<body>
+  <h1 class="title">ESTÁ PERDENDO MUITAS UVAS POR CULPA DOS FUNGOS?</h1>
+    <h2 class="title">com nosso projeto você pode reverter isso!</h2> 
+    <div class="barra">
+        <div class="container">
+            
+        </div>
+    </div>
+    <br> <br>
+    <p><b>  Responda essas três perguntas para saber sobre os beneficios que nosso projeto pode te proporcionar:</b></p> <br> <br>
+
+   os troncos, bagas ou folhas das suas parreiras estão com alguma alteração? se sim, responda esse questionário rápido! <br> <br>
+   
+   
+  seus ramos possuem manchas na cor marrom? <input type="text" id="r1"> <br> <br>
+  suas bagas possuem uma camada de pó cinzento? <input type="text" id="r2"> <br> <br>
+  seus troncos possuem cortes transversais? <input type="text" id="r3"> <br> <br>
+   suas folhas estão menores do que o normal ou deformadas? <input type="text" id="r4"> <br>
+
+   
+   
+   <br><button onclick="uvaruim()">analisar</button>
+   
+   
+    
+    
+<div id="div_analise"></div>
+
+
+    
+</body>
+</html>
+
+<script>
+function uvaruim(){
+
+    var resposta1 = r1.value
+    var resposta2= r2.value
+    var resposta3=r3.value
+    var resposta4=r4.value
+
+    if(resposta2 == "sim"){
+       div_analise.innerHTML= `<br> fungo: Oídio, que posteriormente podem ressecar e abrir grandes rachaduras nas uvas`
+    }
+    if(resposta1 == "sim"){
+        div_analise.innerHTML+=`<br> fungo: Míldio, que posteriormente podem apresentar uma superficie branca nas uvas`
+    }
+    if(resposta3 == "sim"){
+        div_analise.innerHTML+=`<br> fungo: pé-preto que posteriormente podem causar grandes cortes profundos na cor preta nos troncos da parreira`
+    }
+    if(resposta4 == "sim"){
+        div_analise.innerHTML+=`<br> fungo: podridão descendente, que posteriormente podem causar deformações nas folhas e apodrecimento e necrose interna`
+    }
+    
+    
+    div_analise.innerHTML += `<br><br> As suas plantações infelizmente estão com fungos que podem fazer com que 40% dela seja perdida e descartada, com o sistema de monitoramento da vittec sua empresa pode deixar de perder essas uvas e lucrar até 50% a mais, além de melhorar a qualidade das uvas!`
+}
+
+</script>
