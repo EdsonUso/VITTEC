@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fundo">
+    
+  
+   <div class="cabecalho">
+
+    <li >CALCULE SUA PERDA POR FUNGOS</li> 
+    
+   </div>
+
+    <div class="container">
+
+        <h2 class="perguntas">Quantos hectares foram plantados na sua última safra? </h2>
+        <input id="hectares_plantados">
+        <br> <br>
+        <h2 class="perguntas">Quantos hectares foram perdidos por fungos na última safra?</h2>
+        <input id="hectares_perdidos">
+        <br><br>
+        <h2 class="perguntas">Qual o seu lucro por cada hectar de uva saudável?<br>
+            Caso não saiba, usaremos o valor base de R$ 137.000 mil reais para calcular seu lucro.</h2>
+        <input id="input_saudavel">
+        <br><br>
+        <h2 class="perguntas"> Caso saiba, nos informe o valor estimado de cada hectar perdido.<br>
+            Se não souber, usaremos o valor base de R$39.000 mil reais para calcular sua perda.</h2>
+        <input id="valor_hectar_perdido">
+        <br><br>
+
+
+        <button class="botao" onclick="calcular()">Calcular Prejuízo</button>
+
+    
+
+    <div id="div_valor"></div>
+    </div>
+   </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var hecplantados = Number(hectares_plantados.value)
+        var hecperdidos = Number(hectares_perdidos.value)
+        var valorperdido = Number(valor_hectar_perdido.value)
+        var lucro = Number(input_saudavel.value)
+        var final = hecplantados * lucro
+        var perca = hecperdidos * valorperdido
+
+        if (valorperdido <= 0) {
+            var perca = 39000 * hecperdidos
+
+
+
+            if (lucro <= 0) {
+                var final = hecplantados * 137000
+
+
+            }
+        }
+         div_valor.innerHTML  = `Com ${hecplantados} Hectares plantados, era esperado um lucro de R$${final}. <br>
+        Mas com o ataque de doenças fúngicas, houve a perda de  ${hecperdidos} hectares , resultando em aproximadamente R$ ${perca} em prejuízo. <br>
+        `
+    }
+</script>
