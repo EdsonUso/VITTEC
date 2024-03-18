@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="calcu.css">
+
+</head>
+
+<body background="https://www.salton.com.br/upload/midia/blog-filoxera-1.png">
+    <div class="calculadora">
+        <img src="C:\Users\Aluno\Pictures\cfvt\thumbnail_logo_trial.png" style="width: 200px; display: flex; justify-content: center; align-items: center;">
+        <div class="inicio" id="div_ti"> Use nossa calculadora de forma descompromissada para entender melhor o tamanho do seu
+            problema e como podemos ajudá-lo! </div>
+
+        <div class="inicio">
+
+            <br><br>
+        </div>
+
+        <div class="perguntas">
+            Quantos hectares plantados você possuí:
+            <input id="id_hectares">
+            <br><br>
+
+            Quantos dos seus hectares foram acometidos por fungos:
+            <input id="id_hecfungos">
+            <br>
+            <br>
+        </div>
+
+
+        <button class="botao" onclick="calcular()">Calcular Percas</button>
+        <br>
+        <br>
+
+        <div class="hectares" id="div_hectares"></div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var hectares = Number(id_hectares.value)
+        var hecfungos = Number(id_hecfungos.value)
+
+        var hectar = hectares - hecfungos
+        var total = hectar * 20000
+
+        var plucro = hectares * 20000
+        var perda = plucro - total
+
+        div_hectares.innerHTML = `Olá vinicultor! Com base nos dados apresentados por você, podemos te retornar algumas informações:<br><br>
+        A primeira delas, é que seu ganho por safra é de R$${total}, uma vez que atualmente um hectare vale aproximadamente R$20.000.
+        A segunda, é que você poderia estar tendo um lucro de até R$${plucro}, se suas parreiras deixassem de perder uvas de qualidade devido aos fungos.
+        A terceira, é que esse número representa na prática que você está perdendo aproximadamente R$${perda}, por um problema que pode ser contornado.<br><br>
+        Nós, da Vittech, queremos ajudar a reduzir as perdas e danos causados pelos fungos na sua plantação. Nossos sensores de temperatura e umidade tem como objetivo oferecer para você um monitoramento seguro para garantir o clima certo para as suas uvas.<br><br>
+        Seja muito bem vindo a nossa plataforma, você pode descobrir mais sobre nosso projeto na aba inicial e nos contatar em caso de interesse no canto superior da tela.`
+    }
+
+</script>
