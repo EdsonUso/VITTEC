@@ -10,6 +10,8 @@
         body {
             margin: 0;
             padding: 0;
+            color: #661f25;
+            font-weight:bold;
         }
 
         .background {
@@ -30,19 +32,28 @@
             padding: 2%;
             height: fit-content;
             width: 50%;
-            background-color: aliceblue;
+            background-color:beige;
             border-radius: 15px;
             display: flex;
             align-items: center;
             flex-direction: column;
-            margin: 2%;
-        }  
+            margin: 1%;
+        }
+
         .container:has(h1){
             padding-top: 0;
         }
 
+        h1, b{
+            color: #daa520;
+        }
+
         .form {
             width: 80%;
+        }
+
+        b{
+            font-size:large;
         }
 
         .hidden {
@@ -59,21 +70,21 @@
                 <div class="form">
                     Qual o valor médio da tonelada da sua uva? <br>
                     <input type="text" id="mediaTon" onkeydown="checkTon()"><br><br>
-                    <span class="hidden" id="hidden1">
+                    <span class="hidden" id="hidden1"> <!-- Inicialmente escondido-->
                         Qual o tamanho em hectares da sua plantação?<br>
                         <input type="text" id="hectare" onkeydown="checkHect()"><br><br>
                     </span>
-                    <span class="hidden" id="hidden2">
+                    <span class="hidden" id="hidden2"> <!-- Inicialmente escondido-->
                         Você sabe se sua plantação está acometida por algum fungo?<br>
                         Sim<input type="radio" id="radFungo1" name="radFungo" value="sim" onchange="checkFungo()">
                         Não<input type="radio" id="radFungo2" name="radFungo" value="nao" onchange="checkFungo()"><br><br>
                     </span>
-                    <span class="hidden" id="hidden3">
+                    <span class="hidden" id="hidden3"> <!-- Inicialmente escondido-->
                         Você sabe dizer qual o tipo de fungo?<br>
                         Sim<input type="radio" id="radTipoFungo1" name="radTipoFungo" value="sim" onchange="checkTipoFungo()">
                         Não<input type="radio" id="radTipoFungo2" name="radTipoFungo" value="nao" onchange="checkTipoFungo()"><br><br>
                     </span>
-                    <span class="hidden" id="hidden4">
+                    <span class="hidden" id="hidden4"> <!-- Inicialmente escondido-->
                         Por favor, nos diga o tipo de fungo:
                         <select id="fungos" required>
                             <option value="0" selected disabled></option>
@@ -84,14 +95,14 @@
                             <option value="5">Outras doenças</option>
                         </select><br><br>
                     </span>
-                    <span class="hidden" id="hidden5">
-                        Nesse caso suporemos de que sua plantação está acometida pelo Mildio, por se
+                    <span class="hidden" id="hidden5"> <!-- Inicialmente escondido-->
+                        Nesse caso suporemos que sua plantação está acometida pelo Mildio, por se
                         tratar de um dos fungos mais comuns. <br><br>
                     </span>
                 </div>
                 <button onclick="calculoPerdas()">Qual o tamanho da minha perda?</button>
             </div>
-            <div class="container hidden" id="resultado"></div>
+            <div class="container hidden" id="resultado"></div> <!-- Inicialmente escondido-->
         </div>
     </div>
 </body>
@@ -113,9 +124,9 @@
 
         if(radFungo1.checked==false || radTipoFungo1.checked==false){
             tipoFungo=2
-        }else{
-            tipoFungo = fungos.value
             nomeFungo = "Mildio"
+        }else{
+            tipoFungo = Number(fungos.value)
         }
         if(tipoFungo==1){
             porc = 30 //https://ainfo.cnptia.embrapa.br/digital/bitstream/item/153018/1/Manual-4-1-Capitulo-2.pdf
