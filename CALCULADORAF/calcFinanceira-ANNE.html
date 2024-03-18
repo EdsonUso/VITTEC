@@ -17,7 +17,7 @@
     <br> <br>
     <p><b>  Responda essas três perguntas para saber sobre os beneficios que nosso projeto pode te proporcionar:</b></p> <br> <br>
    quantos hectares de parreiras plantadas você possui?<input type="number" id="input_hec">
-   quanto vale cada hectar na sua plantação?(em reais)<input type="number" id="input_reais"><br> <br>
+   quanto vale cada hectare na sua plantação?(em reais)<input type="number" id="input_reais"><br> <br>
   <p> os troncos, bagas ou folhas das suas parreiras estão com alguma alteração? se sim, responda esse questionário rápido!</p> <br> <br>
    
    
@@ -49,7 +49,7 @@ function uvaruim(){
     var resposta4=r4.value
     var calculo = Number (input_hec.value)*0.4
     var hec =Number( input_reais.value)
-    var reais = input_reais.value*input_hec.value
+    var reais = input_reais.value*calculo
     if(resposta2 == "sim"){
        div_analise.innerHTML= `<br> fungo: Oídio, que posteriormente podem ressecar e abrir grandes rachaduras nas uvas`
     }
