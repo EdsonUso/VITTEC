@@ -57,6 +57,15 @@ div#div_valor{
 }
 
 .exibir {
-
     color:white;
+}
+
+input{
+    color: white;
+    background-color: #56050C;
+}
+button:hover{
+    background-color: #56050C;
+    color: white;
+    
 }
