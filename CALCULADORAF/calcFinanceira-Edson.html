@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-simulator">
+        <h1 class="titulo-simulator">Simulador Financeiro</h1>
+        <div class="box-simulator">
+            <div class="form">
+                <h2 class="titulo-input">Quantos Hectares você tem em sua vinicula?</h2>
+                <input type="text" id="input_hectare" placeholder="Quantidade de Hectares">
+                <h2 class="titulo-input">Qual o preço do kg da sua uva?</h2>
+                <input type="text" id="input_precoUva" placeholder="preço da sua uva?">
+                <h2 class="titulo-input">Qual o maximo que você pode produzir em toneladas?</h2>
+                <input type="text" id="input_max" placeholder="maximo">
+                <h2 class="titulo-input">Qual foi a quantidade em toneladas da sua ultima safra?</h2>
+                <input type="text" id="input_safra" placeholder="ultima safra">
+            </div>
+            <h2 class="titulo-adicional">Poderia nos ajudar com algumas informações a mais?</h2>
+            <button class="button-add" onclick="add()">Adicionar Informações</button>
+            <button class="button-add" onclick="calc()">Não obrigado</button>
+            <div class="add" id="div_add"></div>
+            <div class="add" id="div_addNome"></div>
+            <div class="add" id="div_addDoenca"></div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
