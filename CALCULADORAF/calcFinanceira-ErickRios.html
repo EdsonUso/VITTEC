@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Perdas</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #661f25;
+            font-weight:bold;
+        }
+
+        .background {
+            background-image: url(https://c.pxhere.com/photos/11/e0/grapes_plant_wine_cultivation-1157694.jpg!d);
+            background-size: cover;
+        }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+        }
+
+        .container {
+            padding: 2%;
+            height: fit-content;
+            width: 50%;
+            background-color:beige;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 1%;
+        }
+
+        .container:has(h1){
+            padding-top: 0;
+        }
+
+        h1, b{
+            color: #daa520;
+        }
+
+        .form {
+            width: 80%;
+        }
+
+        b{
+            font-size:large;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="content">
+            <div class="container">
+                <h1>Calcule suas perdas</h1>
+                <div class="form">
+                    Qual o valor médio da tonelada da sua uva? <br>
+                    <input type="text" id="mediaTon" onkeydown="checkTon()"><br><br>
+                    <span class="hidden" id="hidden1"> <!-- Inicialmente escondido-->
+                        Qual o tamanho em hectares da sua plantação?<br>
+                        <input type="text" id="hectare" onkeydown="checkHect()"><br><br>
+                    </span>
+                    <span class="hidden" id="hidden2"> <!-- Inicialmente escondido-->
+                        Você sabe se sua plantação está acometida por algum fungo?<br>
+                        Sim<input type="radio" id="radFungo1" name="radFungo" value="sim" onchange="checkFungo()">
+                        Não<input type="radio" id="radFungo2" name="radFungo" value="nao" onchange="checkFungo()"><br><br>
+                    </span>
+                    <span class="hidden" id="hidden3"> <!-- Inicialmente escondido-->
+                        Você sabe dizer qual o tipo de fungo?<br>
+                        Sim<input type="radio" id="radTipoFungo1" name="radTipoFungo" value="sim" onchange="checkTipoFungo()">
+                        Não<input type="radio" id="radTipoFungo2" name="radTipoFungo" value="nao" onchange="checkTipoFungo()"><br><br>
+                    </span>
+                    <span class="hidden" id="hidden4"> <!-- Inicialmente escondido-->
+                        Por favor, nos diga o tipo de fungo:
+                        <select id="fungos" required>
+                            <option value="0" selected disabled></option>
+                            <option value="1">Antracnose</option>
+                            <option value="2">Míldio</option>
+                            <option value="3">Podridão amarga</option>
+                            <option value="4">Pé-preto</option>
+                            <option value="5">Outras doenças</option>
+                        </select><br><br>
+                    </span>
+                    <span class="hidden" id="hidden5"> <!-- Inicialmente escondido-->
+                        Nesse caso suporemos que sua plantação está acometida pelo Mildio, por se
+                        tratar de um dos fungos mais comuns. <br><br>
+                    </span>
+                </div>
+                <button onclick="calculoPerdas()">Qual o tamanho da minha perda?</button>
+            </div>
+            <div class="container hidden" id="resultado"></div> <!-- Inicialmente escondido-->
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function calculoPerdas() {
+        var valorTonelada = Number(mediaTon.value)
+        var qtdHectares = Number(hectare.value)
+        var totalToneladas = qtdHectares*40
+
+        var valorHectare = valorTonelada*40*qtdHectares // um hectare rende de 20-40ton de uvas para vinhos de qualidade baixa/média https://wikifarmer.com/pt-br/rendimento-de-uva-por-hectare/ 
+        var tipoFungo
+        var nomeFungo = fungos.options[fungos.selectedIndex].text
+        var porc = 0
+        var valorPerdido = 0
+
+        if(radFungo1.checked==false || radTipoFungo1.checked==false){
+            tipoFungo=2
+            nomeFungo = "Mildio"
+        }else{
+            tipoFungo = Number(fungos.value)
+        }
+        if(tipoFungo==1){
+            porc = 30 //https://ainfo.cnptia.embrapa.br/digital/bitstream/item/153018/1/Manual-4-1-Capitulo-2.pdf
+        }else if(tipoFungo==2){
+            porc = 75 //https://revistacultivar.com.br/artigos/uva-hora-do-ataque-do-mildio
+        }else if(tipoFungo==3 || tipoFungo==4 || tipoFungo==5){
+            porc = 50   //https://www.scielo.br/j/fb/a/9YxCw9P4QDLM6kMdDmMMN3c/?lang=pt || //http://www.tede2.ufrpe.br:8080/tede/bitstream/tede2/7836/2/Moara%20Alexandrino%20Bandeira.pdf || assumesse perda de até 50% para outras doenças
+        }
+
+        valorPerdido = (valorHectare*porc/100)
+
+        resultado.innerHTML = `
+            <span>
+                De acordo com os dados informados por você, atualmente você está produzindo, ou deveria estar, 
+                cerca de <b>${totalToneladas} toneladas</b> de uvas por colheita, equivalente a <b>R$${valorHectare}</b>.<br>
+                Se você estiver produzindo números muito menores do que isso, já é razão para se preocupar!<br>
+                Partindo da suposição da existência do fungo <b>${nomeFungo}</b> em suas plantas, podemos esperar uma perda de até <b>${porc}%</b> em sua produção, equivalente a <b style="color:red">R$${valorPerdido}</b>!
+            </span>
+        `
+        resultado.classList.remove("hidden")
+
+    }
+
+    //Checa se o valor inserido no campo de valor por tonelada é maior ou igual a zero.
+    //Se sim, libera a próxima pergunta
+    function checkTon() {
+        if (Number(mediaTon.value) >= 0) {
+            hidden1.classList.remove("hidden")
+        }
+    }
+
+    //Checa se o valor inserido no campo de quantidade de hectares é maior ou igual a zero.
+    //Se sim, libera a próxima pergunta
+    function checkHect() {
+        if (Number(hectare.value) >= 0) {
+            hidden2.classList.remove("hidden")
+        }
+    }
+
+    //Checa se uma das opções perguntando se o usuário sabe sobre os fungos na sua plantação foi selecionada.
+    //Se sim, libera a próxima pergunta.
+    //Senão, informa ao usuário que partiremos da suposição da existencia de um fungo (Míldio)
+    function checkFungo() {
+        if (radFungo1.checked == true) {
+            hidden3.classList.remove("hidden")
+            hidden5.classList.add("hidden")
+        } else {
+            hidden5.classList.remove("hidden")
+            hidden3.classList.add("hidden")
+            hidden4.classList.add("hidden")
+        }
+    }
+
+    //Checa se uma das opções perguntando se o usuário sabe qual o tipo de fungo presente na sua plantação foi selecionada.
+    //Se sim, libera a próxima pergunta.
+    //Senão, informa ao usuário que partiremos da suposição da existencia de um fungo (Míldio).
+    function checkTipoFungo() {
+        if (radTipoFungo1.checked == true) {
+            hidden4.classList.remove("hidden")
+            hidden5.classList.add("hidden")
+        } else {
+            hidden5.classList.remove("hidden")
+            hidden4.classList.add("hidden")
+        }
+    }
+
+</script>

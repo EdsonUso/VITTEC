@@ -16,8 +16,9 @@
     </div>
     <br> <br>
     <p><b>  Responda essas três perguntas para saber sobre os beneficios que nosso projeto pode te proporcionar:</b></p> <br> <br>
-
-   os troncos, bagas ou folhas das suas parreiras estão com alguma alteração? se sim, responda esse questionário rápido! <br> <br>
+   quantos hectares de parreiras plantadas você possui?<input type="number" id="input_hec">
+   quanto vale cada hectare na sua plantação?(em reais)<input type="number" id="input_reais"><br> <br>
+  <p> os troncos, bagas ou folhas das suas parreiras estão com alguma alteração? se sim, responda esse questionário rápido!</p> <br> <br>
    
    
   seus ramos possuem manchas na cor marrom? <input type="text" id="r1"> <br> <br>
@@ -46,7 +47,9 @@ function uvaruim(){
     var resposta2= r2.value
     var resposta3=r3.value
     var resposta4=r4.value
-
+    var calculo = Number (input_hec.value)*0.4
+    var hec =Number( input_reais.value)
+    var reais = input_reais.value*calculo
     if(resposta2 == "sim"){
        div_analise.innerHTML= `<br> fungo: Oídio, que posteriormente podem ressecar e abrir grandes rachaduras nas uvas`
     }
@@ -61,7 +64,8 @@ function uvaruim(){
     }
     
     
-    div_analise.innerHTML += `<br><br> As suas plantações infelizmente estão com fungos que podem fazer com que 40% dela seja perdida e descartada, com o sistema de monitoramento da vittec sua empresa pode deixar de perder essas uvas e lucrar até 50% a mais, além de melhorar a qualidade das uvas!`
+    
+    div_analise.innerHTML += `<br><br> As suas plantações infelizmente estão com fungos que podem fazer com que 40% dela seja perdida e descartada, ou seja ${calculo} hectares, e ${reais}mil reais de prejuizo.  Com o sistema de monitoramento da vittec sua empresa pode deixar de perder essas uvas e lucrar até 50% a mais, além de melhorar a qualidade das uvas!`
 }
 
 </script>
