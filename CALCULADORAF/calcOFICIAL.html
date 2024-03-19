@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleOFICIAL.css">
+    <title>Vittec Calculadora</title>
+</head>
+<body class="fundo">
+
+    
+    <div class="cabecalho">
+
+    <div class="titulo">
+        <li>Seja bem vindo à Calculadora VITTEC!
+            <br>Aqui, você poderá descobrir a média de valores 
+            <br> que sua Empresa produz!! </li> <br>
+        </div>
+    </div>
+        <div class="container">
+
+            <div class="perguntas">
+                 Nome da Empresa <br>
+                <input id="input_nome_empresa" placeholder="Digite aqui"> <br>
+                Custo de Cada Hectare
+                <input id="input_valor_hectares" placeholder="Digite aqui"> <br>
+                Média de Plantio Mensal
+                <input id="input_plantio" placeholder="Por Hectare"> <br>
+                Média de Percas Obtidas
+                <input id="input_qtd_perca" placeholder="Por hectare"> <br>
+                <button onclick="CalculoPreju()">Calcular Prejuízo</button>
+            </div>
+        
+           
+        <div class="exibir"><p id="ExibirCalculo"></p></div>
+    </body>
+    </html>
+    
+    <script>
+        function CalculoPreju() {
+            var nomeEmpresa= input_nome_empresa.value
+           var hectaresCusto=Number(input_valor_hectares.value) 
+           var plantio=Number(input_plantio.value) 
+           var perca=Number(input_qtd_perca.value) 
+           var prejuizo= (hectaresCusto/plantio)*perca
+           var porcentagem= (perca/plantio)*100
+    
+           ExibirCalculo.innerHTML=`Olá ${nomeEmpresa}, atualmente, você possui uma média de plantio de ${plantio} Hectares, 
+           <br> onde R$${prejuizo} em hectares são perdidos através das doenças fungicas que afetam sua plantação.
+            <br> Com base no nosso projeto, podemos aumentar seu ganho em até ${porcentagem}% por hectare`
+        }
+    </script>
+
+
