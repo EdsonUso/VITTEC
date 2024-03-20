@@ -1,16 +1,27 @@
-body {
+body{
 
     background: url("https://blog4.mfrural.com.br/wp-content/uploads/2020/12/uva-quintal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    width: 100%;
+    background-color: #56050C;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    border: 5px solid #AE8625;
 }
 
 
+.container-calc {
 
-.container {
-
-    height: 450px;
-    width: 500px;
+    height: 100%;
+    width: 450px;
     background-color: #56050C;
     border: 10px solid #AE8625;
     text-align: center;
@@ -22,7 +33,11 @@ body {
 
 }
 
-.perguntas {
+.box-calc{
+    width: 450px;
+}
+
+.form-calc {
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     color: white;
@@ -30,20 +45,7 @@ body {
     font-weight:bold;
 }
 
-.cabecalho{
-    width: 100%;
-    height: 150px;
-    background-color: #56050C;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 30px;
-    color:white;
-    text-align: center;
-    border-bottom: 5px solid #AE8625;
-    margin-top:0%;
-    list-style: none;
-    font-weight: bold;
 
-}
 
 .texto1{
     font-size: 45px;

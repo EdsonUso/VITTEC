@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleOFICIAL.css">
     <title>Vittec Calculadora</title>
 </head>
-<body class="fundo">
 
-    
-    <div class="cabecalho">
+<body>
 
-    <div class="titulo">
-        <li>Seja bem vindo à Calculadora VITTEC!
-            <br>Aqui, você poderá descobrir a média de valores 
-            <br> que sua Empresa produz!! </li> <br>
+
+    <div class="navbar">
+        <div class="titulo-nav">
+            <h1 class="titulo-nav">Seja bem vindo à Calculadora VITTEC!</h1>
+            <div class="desc-nav">
+                <p>Aqui, você poderá descobrir a media de valores que sua empresa produz!!</p>
+                <p>Serão utilizados como base, unidades por hectare</p>
+            </div>
+            <!-- <li>Seja bem vindo à Calculadora VITTEC!
+                <br>Aqui, você poderá descobrir a média de valores
+                <br> que sua Empresa produz!!
+            </li> <br> -->
         </div>
     </div>
-        <div class="container">
 
-            <div class="perguntas">
-                 Nome da Empresa <br>
-                <input id="input_nome_empresa" placeholder="Digite aqui"> <br>
-                Custo de Cada Hectare
-                <input id="input_valor_hectares" placeholder="Digite aqui"> <br>
-                Média de Plantio Mensal
-                <input id="input_plantio" placeholder="Por Hectare"> <br>
-                Média de Percas Obtidas
-                <input id="input_qtd_perca" placeholder="Por hectare"> <br>
+
+    <div class="container-calc">
+        <div class="box-calc">
+
+
+            <div class="form-calc">
+                <h4 class="titulo-input">
+                    Nome da Empresa
+                </h4>
+                <input id="input_nome_empresa" placeholder="Minha empresa"> <br>
+                <h4 class="titulo-input">
+                    Custo de cada hectare
+                </h4>
+                <input id="input_valor_hectares" placeholder="xxxxxx"> <br>
+                <h4 class="titulo-input">
+                    Media de plantio mensal
+                </h4>
+                <input id="input_plantio" placeholder="xxxxxx"> <br>
+                <h4 class="titulo-input">
+                    Media de perdas obtidas
+                </h4>
+                <input id="input_qtd_perca" placeholder="xxxxxxx"> <br>
                 <button onclick="CalculoPreju()">Calcular Prejuízo</button>
             </div>
-        
-           
-        <div class="exibir"><p id="ExibirCalculo"></p></div>
-    </body>
-    </html>
-    
-    <script>
-        function CalculoPreju() {
-            var nomeEmpresa= input_nome_empresa.value
-           var hectaresCusto=Number(input_valor_hectares.value) 
-           var plantio=Number(input_plantio.value) 
-           var perca=Number(input_qtd_perca.value) 
-           var prejuizo= (hectaresCusto/plantio)*perca
-           var porcentagem= (perca/plantio)*100
-    
-           ExibirCalculo.innerHTML=`Olá ${nomeEmpresa}, atualmente, você possui uma média de plantio de ${plantio} unidades por hectare, 
+        </div>
+    </div>
+
+
+    <div class="exibir">
+        <p id="ExibirCalculo"></p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function CalculoPreju() {
+        var nomeEmpresa = input_nome_empresa.value
+        var hectaresCusto = Number(input_valor_hectares.value)
+        var plantio = Number(input_plantio.value)
+        var perca = Number(input_qtd_perca.value)
+        var prejuizo = (hectaresCusto / plantio) * perca
+        var porcentagem = (perca / plantio) * 100
+
+        ExibirCalculo.innerHTML = `Olá ${nomeEmpresa}, atualmente, você possui uma média de plantio de ${plantio} unidades por hectare, 
            <br> onde R$${prejuizo} são perdidos em cada um. Dentre do prejuízo, pode conter percas que provém de algumas doenças fúngicas que afetam a plantação, ou por conta da temperatura e umidade que afetam o Terroir do plantio.
             <br> Com base no nosso projeto, podemos reduzir a sua perca em até ${porcentagem}% por hectare, monitorando a umidade e temperatura de todo o seu plantio!`
-        }
-    </script>
-
-
+    }
+</script>
