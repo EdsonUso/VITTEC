@@ -70,6 +70,20 @@ body {
     align-items: center;
 }
 
+.button-input{
+    width: 113%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.button-input button{
+    width: 36px;
+    height: 35px;
+}
+
 .titulo-input {
     color: #fff;
     font-size: 19px;
@@ -114,4 +128,5 @@ button{
     font-size: 20px;
     opacity: 0.8;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 15px
 }
