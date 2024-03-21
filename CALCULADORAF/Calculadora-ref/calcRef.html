@@ -35,9 +35,7 @@
                         <h2 class="titulo-input">
                             Média de plantio mensal
                         </h2>
-                        <div class="button-input">
                             <input id="input_plantio" placeholder="xxxxxx"> <br>
-                        </div> 
                         <h2 class="titulo-input">
                             Média de perda
                         </h2>
@@ -67,7 +65,7 @@
         var porcentagem = (perca / plantio) * 100
 
         ExibirCalculo.innerHTML = `Olá ${nomeEmpresa}, <br> atualmente, você possui uma média de plantio de ${plantio} unidades por hectare, 
-           <br> onde R$${prejuizo} são perdidos em cada um. Dentre do prejuízo, pode conter percas que provém de algumas doenças fúngicas que afetam a plantação, ou por conta da temperatura e umidade que afetam o Terroir do plantio.
+           <br> onde R$${prejuizo} são perdidos em cada um. Dentro do prejuízo, pode conter percas que provém de algumas doenças fúngicas que afetam a plantação, ou por conta da temperatura e umidade que afetam o Terroir do plantio.
             <br> Com base no nosso projeto, podemos reduzir a sua perca em até ${porcentagem}% por hectare, monitorando a umidade e temperatura de todo o seu plantio!`
     }
 </script>

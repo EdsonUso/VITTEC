@@ -129,6 +129,15 @@ button{
     font-weight: bold;
 }
 
+
+button:hover{
+    background-color: #660d1e;
+}
+
+button:active{
+    border: solid #E2D5B1 1px;
+}
+
 .resultado{
     background-color: #E2D5B1;
     width: 400px;
