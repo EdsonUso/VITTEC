@@ -72,12 +72,10 @@ function calc() {
     if (tonSafra < mediaTon) {
 
         
-        alert(`Segundo nossos calculos, você está tendo um prejuizo de ${mediaLucro - lucro}!`)
+        div_resultado.innerHTML = `Segundo nossos calculos, você está tendo um prejuizo de ${mediaLucro - lucro}!`
 
     }
 
-    console.log(mediaTon)
-    console.log(tonSafra)
 }
 
 

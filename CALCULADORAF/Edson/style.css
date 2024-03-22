@@ -5,8 +5,10 @@ body{
 
 .container-simulator{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
+    flex-direction: column;
+    align-items: center; 
+    background-color: #691222;
+    color: aliceblue;
+    height: 100vh;
 
 }
