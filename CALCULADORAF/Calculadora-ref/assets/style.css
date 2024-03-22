@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    
 }
 
 .titulo-nav{
@@ -22,6 +23,20 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.desc-nav{
+    background-color: #691222;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+.desc-nav p{
+    color: #fff;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    
+}
 .area-calc {
     width: 100%;
     display: flex;
@@ -70,6 +85,20 @@ body {
     align-items: center;
 }
 
+.button-input{
+    width: 113%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.button-input button{
+    width: 36px;
+    height: 35px;
+}
+
 .titulo-input {
     color: #fff;
     font-size: 19px;
@@ -100,12 +129,22 @@ button{
     font-weight: bold;
 }
 
+
+button:hover{
+    background-color: #660d1e;
+}
+
+button:active{
+    border: solid #E2D5B1 1px;
+}
+
 .resultado{
     background-color: #E2D5B1;
-    width: 600px;
-    height: 493px;
+    width: 400px;
+    height: 400px;
     border-radius: 13px;
     display: flex;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     color: #3F0812;
@@ -114,4 +153,5 @@ button{
     font-size: 20px;
     opacity: 0.8;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 15px
 }
