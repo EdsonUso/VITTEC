@@ -70,6 +70,8 @@ function calc() {
     let mediaLucro = (precoUva * (mediaTon * 1000));
 
     if (tonSafra < mediaTon) {
+
+        
         alert(`Segundo nossos calculos, você está tendo um prejuizo de ${mediaLucro - lucro}!`)
 
     }
