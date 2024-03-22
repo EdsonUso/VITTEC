@@ -47,7 +47,7 @@ function betterCalc(num,string){
 
     }
 
-    alert(`o erro está no if`)
+
 
     console.log(mediaTon)
     console.log(tonSafra)
